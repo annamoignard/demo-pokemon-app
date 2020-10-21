@@ -1,0 +1,43 @@
+Pokemons
+
+id integer
+name string
+poke_type enum integer
+hp integer
+trainer_id integer
+
+
+ASSOC
+belongs_to trainer
+
+
+
+Trainers
+
+id integer
+name string
+gym_leader boolean
+city_id integer
+
+
+ASSOC
+has_many pokemon
+belongs_to city
+
+
+
+Cities
+name string
+region_id integer
+
+
+ASSOC
+has_many trainers
+belongs_to region
+
+
+Regions
+name string
+
+ASSOC
+has_many cities
